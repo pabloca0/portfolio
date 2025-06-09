@@ -147,9 +147,8 @@ export default function Home() {
     <>
       <Starfield />
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-          scrolled ? 'backdrop-blur-sm' : ''
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${scrolled ? 'backdrop-blur-sm' : ''
+          }`}
       >
         <nav className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-white py-3 px-2 md:px-4 gap-2 md:gap-0">
           <div className="flex-1"></div>
@@ -182,14 +181,23 @@ export default function Home() {
             <p className="text-base md:text-lg text-gray-400 mb-4">
               {t(personalData.bioKey)}
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 text-sm">
-              <a href={personalData.github} target="_blank" rel="noopener" className="flex items-center gap-2 bg-[#2a2d34] text-white px-4 py-1 rounded-full hover:bg-[#3b3f47] transition">
-                <Github className="w-4 h-4 text-white" /> GitHub
+            <div className="flex flex-row flex-wrap justify-center gap-3 text-sm">
+              <a
+                href={personalData.github}
+                target="_blank"
+                rel="noopener"
+                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto">
+                <Github className="w-4 h-4 text-white" />
+                GitHub
               </a>
-              <a href={personalData.linkedin} target="_blank" rel="noopener" className="flex items-center gap-2 bg-[#2a2d34] text-white px-4 py-1 rounded-full hover:bg-[#3b3f47] transition">
+              <a href={personalData.linkedin} target="_blank"
+                rel="noopener"
+                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto">
                 <Linkedin className="w-4 h-4 text-white" /> LinkedIn
               </a>
-              <a href={"mailto:" + personalData.email} className="flex items-center gap-2 bg-[#2a2d34] text-white px-4 py-1 rounded-full hover:bg-[#3b3f47] transition">
+              <a href={"mailto:" + personalData.email} target="_blank"
+                rel="noopener"
+                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto">
                 <Mail className="w-4 h-4 text-white" /> Email
               </a>
             </div>
@@ -205,7 +213,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
                   alt="Coding workspace"
                   className="w-full h-40 object-cover rounded-md mb-4"
-                  />
+                />
                 <h3 className="text-lg md:text-xl font-bold text-white">Proyecto 1</h3>
                 <p className="text-sm text-gray-400 mt-2">Descripción del proyecto. Tecnologías usadas: React, Tailwind CSS.</p>
                 <a href="https://github.com/tuusuario/proyecto1" className="text-sm text-white mt-3 inline-block hover:underline">Ver en GitHub</a>

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Github, Linkedin, Mail, Briefcase, Folder, User } from 'lucide-react';
 import personalData from '../data/personalData';
+import experience from '../data/experience';
 
 
 const STAR_COUNT = 120;
@@ -174,8 +175,7 @@ export default function Home() {
               Hola, soy <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">{personalData.nombre}</span>
             </h1>
             <p className="text-base md:text-lg text-gray-400 mb-4">
-              👨🏻‍💻 Desarrollador de aplicaciones iOS | Swift, UX y apps nativas | +6 años de experiencia. 🎯 iOS Developer with advanced experience in Swift, SwiftUI, and UIKit.
-              🚀 I specialize in building high-performance apps with clean code and great user experience.
+              {personalData.bio}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 text-sm">
               <a href={personalData.github} target="_blank" rel="noopener" className="flex items-center gap-2 bg-[#2a2d34] text-white px-4 py-1 rounded-full hover:bg-[#3b3f47] transition">
@@ -196,7 +196,11 @@ export default function Home() {
             </h2>
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
               <div className="bg-[#1f2125] border border-gray-700 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition">
-                <img src="https://images.unsplash.com/photo-1581091012184-7f1a025b841c?auto=format&fit=crop&w=800&q=80" alt="Proyecto 1" className="w-full h-36 md:h-40 object-cover rounded-md mb-4" />
+                <img
+                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
+                  alt="Coding workspace"
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                  />
                 <h3 className="text-lg md:text-xl font-bold text-white">Proyecto 1</h3>
                 <p className="text-sm text-gray-400 mt-2">Descripción del proyecto. Tecnologías usadas: React, Tailwind CSS.</p>
                 <a href="https://github.com/tuusuario/proyecto1" className="text-sm text-white mt-3 inline-block hover:underline">Ver en GitHub</a>
@@ -215,16 +219,16 @@ export default function Home() {
               <Briefcase className="w-6 h-6" /> Experiencia
             </h2>
             <div className="space-y-6">
-              <div className="bg-[#1f2125] border border-gray-700 rounded-xl p-4 md:p-5 shadow-md">
-                <h3 className="text-lg md:text-xl font-bold text-white">Frontend Developer - TechCorp</h3>
-                <p className="text-sm text-gray-400 mt-1 italic">Enero 2022 - Actualidad</p>
-                <p className="text-sm text-gray-300 mt-2">Responsable del diseño y desarrollo de interfaces modernas con React y Tailwind, liderando iniciativas de accesibilidad y rendimiento.</p>
-              </div>
-              <div className="bg-[#1f2125] border border-gray-700 rounded-xl p-4 md:p-5 shadow-md">
-                <h3 className="text-lg md:text-xl font-bold text-white">Diseñador UX/UI - Freelance</h3>
-                <p className="text-sm text-gray-400 mt-1 italic">Mayo 2020 - Diciembre 2021</p>
-                <p className="text-sm text-gray-300 mt-2">Diseño centrado en el usuario para startups y productos SaaS. Investigación, prototipado y testeo con herramientas como Figma y Adobe XD.</p>
-              </div>
+              {experience.items.map((exp, index) => (
+                <div
+                  key={index}
+                  className="bg-[#1f2125] border border-gray-700 rounded-xl p-5 shadow-md"
+                >
+                  <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                  <p className="text-sm text-gray-400 mt-1 italic">{exp.duration}</p>
+                  <p className="text-sm text-gray-300 mt-2">{exp.description}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -245,7 +249,7 @@ export default function Home() {
           </section>
         </main>
         <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
-          <p>&copy; {new Date().getFullYear()} [Tu Nombre]. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} {personalData.nombre}. Todos los derechos reservados.</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
             <a href="#inicio" className="hover:text-pink-400 transition">Inicio</a>
             <a href="#proyectos" className="hover:text-pink-400 transition">Proyectos</a>

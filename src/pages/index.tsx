@@ -148,24 +148,27 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="dark bg-[#0f0f10] text-white">
+    <>
+      {/* Fondo animado de estrellas, SIEMPRE detrás */}
       <Starfield />
-      <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${scrolled ? 'backdrop-blur-sm' : ''}`}>
-        <nav className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-white py-3 px-2 md:px-4 gap-2 md:gap-0">
-          <div className="flex-1"></div>
-          <div className="flex gap-6 justify-center">
-            <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
-            <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
-            <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
-            <LanguageSelector />
-          </div>
-          <div className="flex-1 flex justify-end">
-            <a href="#contacto" className="inline-block bg-[#4f46e5] hover:bg-[#4338ca] text-white text-base md:text-sm font-bold px-4 md:px-5 py-2 rounded-full shadow-md transition transform hover:scale-105">{t('contact.shortcut')}</a>
-          </div>
-        </nav>
-      </header>
-      <div className="h-20 md:h-20"></div>
-      <main className="min-h-screen text-gray-100 px-2 md:px-6 py-8 md:py-10 font-mono">
+      {/* Contenido principal por encima */}
+      <div className="relative z-10 text-white">
+        <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${scrolled ? 'backdrop-blur-sm' : ''}`}>
+          <nav className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-white py-3 px-2 md:px-4 gap-2 md:gap-0">
+            <div className="flex-1"></div>
+            <div className="flex gap-6 justify-center">
+              <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
+              <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
+              <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
+              <LanguageSelector />
+            </div>
+            <div className="flex-1 flex justify-end">
+              <a href="#contacto" className="inline-block bg-[#4f46e5] hover:bg-[#4338ca] text-white text-base md:text-sm font-bold px-4 md:px-5 py-2 rounded-full shadow-md transition transform hover:scale-105">{t('contact.shortcut')}</a>
+            </div>
+          </nav>
+        </header>
+        <div className="h-20 md:h-20"></div>
+        <main className="min-h-screen text-gray-100 px-2 md:px-6 py-8 md:py-10 font-mono">
           <section id="inicio" className="scroll-mt-32 max-w-4xl mx-auto text-center">
             <img
               src={personalData.imagenPerfil}
@@ -207,7 +210,7 @@ export default function Home() {
               <Folder className="w-6 h-6" /> {t('nav.projects')}
             </h2>
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-              <div className="bg-[#1f2125] border border-gray-700 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition">
+              <div className="bg-[#1f2125]/80 border border-gray-700 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition">
                 <img
                   src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
                   alt="Coding workspace"
@@ -217,7 +220,7 @@ export default function Home() {
                 <p className="text-sm text-gray-400 mt-2">Descripción del proyecto. Tecnologías usadas: React, Tailwind CSS.</p>
                 <a href="https://github.com/tuusuario/proyecto1" className="text-sm text-white mt-3 inline-block hover:underline">Ver en GitHub</a>
               </div>
-              <div className="bg-[#1f2125] border border-gray-700 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition">
+              <div className="bg-[#1f2125]/80 border border-gray-700 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition">
                 <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80" alt="Proyecto 2" className="w-full h-36 md:h-40 object-cover rounded-md mb-4" />
                 <h3 className="text-lg md:text-xl font-bold text-white">Proyecto 2</h3>
                 <p className="text-sm text-gray-400 mt-2">Descripción del proyecto. Tecnologías usadas: Next.js, TypeScript.</p>
@@ -234,7 +237,7 @@ export default function Home() {
               {experience.items.map((exp, index) => (
                 <div
                   key={index}
-                  className="bg-[#1f2125] border border-gray-700 rounded-xl p-5 shadow-md"
+                  className="bg-[#1f2125]/80 border border-gray-700 rounded-xl p-5 shadow-md"
                 >
                   <h3 className="text-xl font-bold text-white">{t(exp.titleKey)}</h3>
                   <p className="text-sm text-gray-400 mt-1 italic">{t(exp.durationKey)}</p>
@@ -244,7 +247,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="contacto" className="scroll-mt-32 mt-16 md:mt-20 max-w-full md:max-w-3xl mx-auto text-center bg-[#1f1f23] p-4 md:p-8 rounded-2xl shadow-xl border border-gray-800 animate-fade-in">
+          <section id="contacto" className="scroll-mt-32 mt-16 md:mt-20 max-w-full md:max-w-3xl mx-auto text-center bg-[#1f1f23]/80 p-4 md:p-8 rounded-2xl shadow-xl border border-gray-800 animate-fade-in">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-2">{t('contact.title')}</h2>
             <p className="text-gray-400 mb-6 text-base md:text-lg">{t('contact.description')}</p>
             <form className="grid gap-4 text-left">
@@ -260,17 +263,18 @@ export default function Home() {
             </form>
           </section>
         </main>
-      <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
-        <p>&copy; {new Date().getFullYear()} {personalData.nombre}. {t('nav.footer.rights')}</p>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
-          <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
-          <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
-          <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
-          <a href="#contacto" className="hover:text-pink-400 transition">{t('nav.contact')}</a>
-        </div>
-      </footer>
+        <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
+          <p>&copy; {new Date().getFullYear()} {personalData.nombre}. {t('nav.footer.rights')}</p>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
+            <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
+            <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
+            <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
+            <a href="#contacto" className="hover:text-pink-400 transition">{t('nav.contact')}</a>
+          </div>
+        </footer>
+      </div>
       <SpeedInsights />
       <Analytics />
-    </div>
+    </>
   );
 }

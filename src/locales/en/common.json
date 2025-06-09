@@ -1,0 +1,40 @@
+{
+  "bio": "👨🏻‍💻 iOS Application Developer | Swift, UX, and Native Apps | 6+ years of experience. 🎯 Advanced expertise in Swift, SwiftUI, and UIKit. 🚀 I specialize in building high-performance iOS apps with clean code and a seamless user experience.",
+  "exp": {
+    "senior": {
+      "title": "Senior iOS App Developer",
+      "duration": "March 2021 - Present",
+      "description": "Responsible for developing and maintaining complex iOS applications, leading efforts in architecture, performance, and user experience."
+    },
+    "junior": {
+      "title": "Junior iOS App Developer",
+      "duration": "September 2019 - March 2021",
+      "description": "Early-stage role as an iOS developer where I learned the fundamentals of native app development using Swift and UIKit. I contributed to small internal projects and gained experience in app architecture, UI design, and development best practices."
+    },
+    "upv": {
+      "title": "Bachelor's Degree in Computer Engineering",
+      "duration": "September 2018 - June 2022",
+      "description": "Completed a comprehensive Computer Engineering program at the Polytechnic University of Valencia (UPV), where I gained a strong foundation in programming, data structures, algorithms, and software development. The program also covered systems architecture, databases, and project management."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "contact": {
+    "title": "Let's get in touch",
+    "description": "You can leave your details and schedule a video call with me directly.",
+    "shortcut": "Let's talk",
+    "submit": "Send"
+  },
+  "project": {
+    "title1": "Project 1",
+    "desc1": "Project description. Technologies used: React, Tailwind CSS.",
+    "link1": "View on GitHub",
+    "title2": "Project 2",
+    "desc2": "Project description. Technologies used: Next.js, TypeScript.",
+    "link2": "View on GitHub"
+  }
+}

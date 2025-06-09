@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { Github, Linkedin, Mail, Briefcase, Folder, User } from 'lucide-react';
 import personalData from '../data/personalData';
 import experience from '../data/experience';
-
+import { useTranslation } from 'react-i18next';
+import '../i18n.ts';
 
 const STAR_COUNT = 120;
 const STAR_COLOR = "#fff";
@@ -104,6 +105,7 @@ function Starfield() {
 }
 
 export default function Home() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -150,12 +152,12 @@ export default function Home() {
         <nav className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-white py-3 px-2 md:px-4 gap-2 md:gap-0">
           <div className="flex-1"></div>
           <div className="flex gap-6 justify-center">
-            <a href="#inicio" className="hover:text-pink-400 transition">Inicio</a>
-            <a href="#proyectos" className="hover:text-pink-400 transition">Proyectos</a>
-            <a href="#experiencia" className="hover:text-pink-400 transition">Experiencia</a>
+            <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
+            <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
+            <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
           </div>
           <div className="flex-1 flex justify-end">
-            <a href="#contacto" className="inline-block bg-[#4f46e5] hover:bg-[#4338ca] text-white text-base md:text-sm font-bold px-4 md:px-5 py-2 rounded-full shadow-md transition transform hover:scale-105">Escríbeme</a>
+            <a href="#contacto" className="inline-block bg-[#4f46e5] hover:bg-[#4338ca] text-white text-base md:text-sm font-bold px-4 md:px-5 py-2 rounded-full shadow-md transition transform hover:scale-105">{t('contact.shortcut')}</a>
           </div>
         </nav>
       </header>
@@ -175,7 +177,7 @@ export default function Home() {
               Hola, soy <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">{personalData.nombre}</span>
             </h1>
             <p className="text-base md:text-lg text-gray-400 mb-4">
-              {personalData.bio}
+              {t(personalData.bioKey)}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 text-sm">
               <a href={personalData.github} target="_blank" rel="noopener" className="flex items-center gap-2 bg-[#2a2d34] text-white px-4 py-1 rounded-full hover:bg-[#3b3f47] transition">
@@ -192,7 +194,7 @@ export default function Home() {
 
           <section id="proyectos" className="scroll-mt-32 mt-16 md:mt-20 max-w-4xl mx-auto">
             <h2 className="text-xl md:text-2xl font-semibold mb-6 border-b border-gray-700 pb-2 flex items-center gap-2">
-              <Folder className="w-6 h-6" /> Proyectos destacados
+              <Folder className="w-6 h-6" /> {t('nav.projects')}
             </h2>
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
               <div className="bg-[#1f2125] border border-gray-700 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition">
@@ -216,7 +218,7 @@ export default function Home() {
 
           <section id="experiencia" className="scroll-mt-32 mt-16 md:mt-20 max-w-4xl mx-auto">
             <h2 className="text-xl md:text-2xl font-semibold mb-6 border-b border-gray-700 pb-2 flex items-center gap-2">
-              <Briefcase className="w-6 h-6" /> Experiencia
+              <Briefcase className="w-6 h-6" /> {t('nav.experience')}
             </h2>
             <div className="space-y-6">
               {experience.items.map((exp, index) => (
@@ -224,17 +226,17 @@ export default function Home() {
                   key={index}
                   className="bg-[#1f2125] border border-gray-700 rounded-xl p-5 shadow-md"
                 >
-                  <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                  <p className="text-sm text-gray-400 mt-1 italic">{exp.duration}</p>
-                  <p className="text-sm text-gray-300 mt-2">{exp.description}</p>
+                  <h3 className="text-xl font-bold text-white">{t(exp.titleKey)}</h3>
+                  <p className="text-sm text-gray-400 mt-1 italic">{t(exp.durationKey)}</p>
+                  <p className="text-sm text-gray-300 mt-2">{t(exp.descriptionKey)}</p>
                 </div>
               ))}
             </div>
           </section>
 
           <section id="contacto" className="scroll-mt-32 mt-16 md:mt-20 max-w-full md:max-w-3xl mx-auto text-center bg-[#1f1f23] p-4 md:p-8 rounded-2xl shadow-xl border border-gray-800 animate-fade-in">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-2">Pongámonos en contacto</h2>
-            <p className="text-gray-400 mb-6 text-base md:text-lg">Puedes dejar tus datos y agendar una videollamada conmigo directamente.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-2">{t('contact.title')}</h2>
+            <p className="text-gray-400 mb-6 text-base md:text-lg">{t('contact.description')}</p>
             <form className="grid gap-4 text-left">
               <input type="text" placeholder="Tu nombre" className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base" />
               <input type="email" placeholder="Tu email" className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base" />
@@ -243,7 +245,7 @@ export default function Home() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-                <span className="font-bold">Enviar</span>
+                <span className="font-bold">{t('contact.submit')}</span>
               </button>
             </form>
           </section>
@@ -251,10 +253,10 @@ export default function Home() {
         <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
           <p>&copy; {new Date().getFullYear()} {personalData.nombre}. Todos los derechos reservados.</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
-            <a href="#inicio" className="hover:text-pink-400 transition">Inicio</a>
-            <a href="#proyectos" className="hover:text-pink-400 transition">Proyectos</a>
-            <a href="#experiencia" className="hover:text-pink-400 transition">Experiencia</a>
-            <a href="#contacto" className="hover:text-pink-400 transition">Contacto</a>
+            <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
+            <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
+            <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
+            <a href="#contacto" className="hover:text-pink-400 transition">{t('nav.contact')}</a>
           </div>
         </footer>
       </div>

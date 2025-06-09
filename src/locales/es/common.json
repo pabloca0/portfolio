@@ -1,0 +1,40 @@
+{
+  "bio": "👨🏻‍💻 Desarrollador de aplicaciones iOS | Swift, UX y apps nativas | +6 años de experiencia. 🎯 Experiencia avanzada en Swift, SwiftUI y UIKit. 🚀 Especializado en apps de alto rendimiento con código limpio y gran experiencia de usuario.",
+  "exp": {
+    "senior": {
+      "title": "Desarrollador iOS Senior",
+      "duration": "Marzo 2021 - Actualidad",
+      "description": "Responsable del desarrollo y mantenimiento de aplicaciones iOS complejas, liderando iniciativas de arquitectura, rendimiento y experiencia de usuario."
+    },
+    "junior": {
+      "title": "Desarrollador iOS Junior",
+      "duration": "Septiembre 2019 - Marzo 2021",
+      "description": "Puesto inicial donde aprendí los fundamentos del desarrollo de apps nativas con Swift y UIKit. Participé en pequeños proyectos internos y gané experiencia en arquitectura, diseño de interfaces y buenas prácticas."
+    },
+    "upv": {
+      "title": "Grado en Ingeniería Informática",
+      "duration": "Septiembre 2018 - Junio 2022",
+      "description": "Completé un grado en Ingeniería Informática en la Universitat Politècnica de València (UPV), adquiriendo una base sólida en programación, estructuras de datos, algoritmos y desarrollo de software. También cubrimos arquitectura de sistemas, bases de datos y gestión de proyectos."
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "contact": {
+    "title": "Pongámonos en contacto",
+    "description": "Puedes dejar tus datos y agendar una videollamada conmigo directamente.",
+    "shortcut": "Escríbeme",
+    "submit": "Enviar"
+  },
+  "project": {
+    "title1": "Proyecto 1",
+    "desc1": "Descripción del proyecto. Tecnologías usadas: React, Tailwind CSS.",
+    "link1": "Ver en GitHub",
+    "title2": "Proyecto 2",
+    "desc2": "Descripción del proyecto. Tecnologías usadas: Next.js, TypeScript.",
+    "link2": "Ver en GitHub"
+  }
+}

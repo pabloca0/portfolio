@@ -8,7 +8,6 @@ import LanguageSelector from '../components/LanguageSelector';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next"
 
-
 const STAR_COUNT = 120;
 const STAR_COLOR = "#fff";
 const STAR_SIZE = 1.2;
@@ -35,7 +34,6 @@ function Starfield() {
       canvas.height = height;
     }
 
-    // Inicializa estrellas
     stars.current = Array.from({ length: STAR_COUNT }, () => ({
       x: randomBetween(0, width),
       y: randomBetween(0, height),
@@ -75,7 +73,6 @@ function Starfield() {
 
     animate();
 
-    // Resize handler
     function handleResize() {
       width = window.innerWidth;
       height = window.innerHeight;
@@ -113,13 +110,13 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.add('dark');
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   useEffect(() => {
     const anchors = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
     const listeners: { anchor: HTMLAnchorElement; handler: (e: MouseEvent) => void }[] = [];
@@ -146,13 +143,14 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
-    <>
+    <div className="dark bg-[#0f0f10] text-white">
       <Starfield />
-      <header
-        className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${scrolled ? 'backdrop-blur-sm' : ''
-          }`}
-      >
+      <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${scrolled ? 'backdrop-blur-sm' : ''}`}>
         <nav className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-white py-3 px-2 md:px-4 gap-2 md:gap-0">
           <div className="flex-1"></div>
           <div className="flex gap-6 justify-center">
@@ -167,9 +165,7 @@ export default function Home() {
         </nav>
       </header>
       <div className="h-20 md:h-20"></div>
-      {/* Añade relative y z-10 aquí */}
-      <div className="min-h-screen text-white relative z-10">
-        <main className="min-h-screen text-gray-100 px-2 md:px-6 py-8 md:py-10 font-mono">
+      <main className="min-h-screen text-gray-100 px-2 md:px-6 py-8 md:py-10 font-mono">
           <section id="inicio" className="scroll-mt-32 max-w-4xl mx-auto text-center">
             <img
               src={personalData.imagenPerfil}
@@ -264,18 +260,17 @@ export default function Home() {
             </form>
           </section>
         </main>
-        <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
-          <p>&copy; {new Date().getFullYear()} {personalData.nombre}. {t('nav.footer.rights')}</p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
-            <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
-            <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
-            <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
-            <a href="#contacto" className="hover:text-pink-400 transition">{t('nav.contact')}</a>
-          </div>
-        </footer>
-      </div>
+      <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
+        <p>&copy; {new Date().getFullYear()} {personalData.nombre}. {t('nav.footer.rights')}</p>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
+          <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
+          <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
+          <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
+          <a href="#contacto" className="hover:text-pink-400 transition">{t('nav.contact')}</a>
+        </div>
+      </footer>
       <SpeedInsights />
       <Analytics />
-    </>
+    </div>
   );
 }

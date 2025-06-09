@@ -1,30 +1,56 @@
 # 💼 Personal Portfolio – Pablo Ceacero
 
-Bienvenido a mi portafolio personal desarrollado con **React** y **Tailwind CSS**. Este proyecto es una carta de presentación digital, donde muestro quién soy, mis proyectos más relevantes y cómo contactarme.
+Welcome to my personal portfolio built with **React** and **Tailwind CSS**. This project serves as my digital resume, showcasing who I am, my most relevant projects, and how to get in touch with me.
 
-## 🚀 Tecnologías
+## 🚀 Technologies
 
-- ⚛️ React (con Hooks)
-- 💨 Tailwind CSS para el diseño responsivo
-- 🎯 Animaciones suaves y efectos visuales
-- 📱 Diseño centrado en experiencia de usuario
-- 🌙 Tema oscuro con fondo degradado
+- ⚛️ React (with Hooks)
+- 💨 Tailwind CSS for responsive design
+- 🎯 Smooth animations and visual effects
+- 📱 User experience-focused design
+- 🌙 Dark theme with gradient background
 
-## ✨ Características
+## 📸 Live Preview
 
-- Navegación con scroll suave entre secciones
-- Sección de proyectos destacados con imágenes
-- Experiencia profesional con diseño limpio
-- Formulario de contacto funcional y atractivo
-- Íconos sociales integrados (GitHub, LinkedIn, Email)
+You can view the live portfolio here: [https://yourdomain.com](https://yourdomain.com) *(replace with your actual deployment link, e.g., Vercel or Netlify)*
 
-## 📸 Vista previa
-
-Puedes ver el portafolio funcionando aquí: [https://tusitio.com](https://tusitio.com) 
-## 🛠 Instalación local
+## 🛠 Local Setup
 
 ```bash
-git clone https://github.com/tuusuario/mi-portfolio.git
-cd mi-portfolio
+git clone https://github.com/pabloca0/portfolio.git
+cd portfolio
 npm install
 npm run dev
+```
+
+## 📁 Project Structure
+
+```
+.
+├── public/
+├── src/
+│   ├── components/
+│   ├── data/
+│   └── pages/
+├── tailwind.config.js
+└── README.md
+```
+
+## 📬 Contact
+
+Interested in working together or collaborating? Feel free to reach out!
+
+- GitHub: [@pabloca0](https://github.com/pabloca0)
+- LinkedIn: [@pabloceacero](https://linkedin.com/in/pablo-cea)
+- Email: cea0.pablo@gmail.com
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. You are free to use it as a base for your own portfolio.
+
+---
+
+Thanks for visiting 🚀
+

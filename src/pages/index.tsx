@@ -113,6 +113,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    document.documentElement.classList.add('dark');
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };

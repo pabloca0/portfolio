@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { Github, Linkedin, Mail, Briefcase, Folder, User } from 'lucide-react';
+import { Github, Linkedin, Mail, Briefcase, Folder } from 'lucide-react';
 import personalData from '../data/personalData';
 import experience from '../data/experience';
 import { useTranslation } from 'react-i18next';

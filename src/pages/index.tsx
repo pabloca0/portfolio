@@ -4,6 +4,8 @@ import personalData from '../data/personalData';
 import experience from '../data/experience';
 import { useTranslation } from 'react-i18next';
 import '../i18n.ts';
+import LanguageSelector from '../components/LanguageSelector';
+
 
 const STAR_COUNT = 120;
 const STAR_COLOR = "#fff";
@@ -155,6 +157,7 @@ export default function Home() {
             <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
             <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>
             <a href="#experiencia" className="hover:text-pink-400 transition">{t('nav.experience')}</a>
+            <LanguageSelector />
           </div>
           <div className="flex-1 flex justify-end">
             <a href="#contacto" className="inline-block bg-[#4f46e5] hover:bg-[#4338ca] text-white text-base md:text-sm font-bold px-4 md:px-5 py-2 rounded-full shadow-md transition transform hover:scale-105">{t('contact.shortcut')}</a>
@@ -174,7 +177,7 @@ export default function Home() {
               className="rounded-full mx-auto mb-4 border-4 border-white w-24 h-24 md:w-32 md:h-32"
             />
             <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white">
-              Hola, soy <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">{personalData.nombre}</span>
+              {t('greeting')}<span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">{personalData.nombre}</span>
             </h1>
             <p className="text-base md:text-lg text-gray-400 mb-4">
               {t(personalData.bioKey)}
@@ -238,9 +241,9 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-2">{t('contact.title')}</h2>
             <p className="text-gray-400 mb-6 text-base md:text-lg">{t('contact.description')}</p>
             <form className="grid gap-4 text-left">
-              <input type="text" placeholder="Tu nombre" className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base" />
-              <input type="email" placeholder="Tu email" className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base" />
-              <textarea placeholder="Mensaje" rows={4} className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base"></textarea>
+              <input type="text" placeholder={t('contact.nameHint')} className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base" />
+              <input type="email" placeholder={t('contact.emailHint')} className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base" />
+              <textarea placeholder={t('contact.messageHint')} rows={4} className="w-full px-3 md:px-4 py-2 rounded bg-[#2a2d34] text-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-base"></textarea>
               <button type="submit" className="mt-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 px-6 rounded-full hover:opacity-90 transition-transform duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-base font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
@@ -251,7 +254,7 @@ export default function Home() {
           </section>
         </main>
         <footer className="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-gray-800">
-          <p>&copy; {new Date().getFullYear()} {personalData.nombre}. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} {personalData.nombre}. {t('nav.footer.rights')}</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-2">
             <a href="#inicio" className="hover:text-pink-400 transition">{t('nav.home')}</a>
             <a href="#proyectos" className="hover:text-pink-400 transition">{t('nav.projects')}</a>

@@ -1,4 +1,5 @@
 {
+  "greeting": "Hola, soy ",
   "bio": "👨🏻‍💻 Desarrollador de aplicaciones iOS | Swift, UX y apps nativas | +6 años de experiencia. 🎯 Experiencia avanzada en Swift, SwiftUI y UIKit. 🚀 Especializado en apps de alto rendimiento con código limpio y gran experiencia de usuario.",
   "exp": {
     "senior": {
@@ -21,12 +22,18 @@
     "home": "Inicio",
     "projects": "Proyectos",
     "experience": "Experiencia",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "footer": {
+      "rights": "Todos los derechos reservados"
+    }
   },
   "contact": {
     "title": "Pongámonos en contacto",
     "description": "Puedes dejar tus datos y agendar una videollamada conmigo directamente.",
     "shortcut": "Escríbeme",
+    "nameHint": "Tu nombre",
+    "emailHint": "Tu email",
+    "messageHint": "Mensaje",
     "submit": "Enviar"
   },
   "project": {

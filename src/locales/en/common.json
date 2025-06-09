@@ -1,4 +1,5 @@
 {
+  "greeting": "Hi, I'm ",
   "bio": "👨🏻‍💻 iOS Application Developer | Swift, UX, and Native Apps | 6+ years of experience. 🎯 Advanced expertise in Swift, SwiftUI, and UIKit. 🚀 I specialize in building high-performance iOS apps with clean code and a seamless user experience.",
   "exp": {
     "senior": {
@@ -12,7 +13,7 @@
       "description": "Early-stage role as an iOS developer where I learned the fundamentals of native app development using Swift and UIKit. I contributed to small internal projects and gained experience in app architecture, UI design, and development best practices."
     },
     "upv": {
-      "title": "Bachelor's Degree in Computer Engineering",
+      "title": "University Degree in Computer Engineering",
       "duration": "September 2018 - June 2022",
       "description": "Completed a comprehensive Computer Engineering program at the Polytechnic University of Valencia (UPV), where I gained a strong foundation in programming, data structures, algorithms, and software development. The program also covered systems architecture, databases, and project management."
     }
@@ -21,12 +22,18 @@
     "home": "Home",
     "projects": "Projects",
     "experience": "Experience",
-    "contact": "Contact"
+    "contact": "Contact",
+    "footer": {
+      "rights": "All rights reserved"
+    }
   },
   "contact": {
     "title": "Let's get in touch",
     "description": "You can leave your details and schedule a video call with me directly.",
     "shortcut": "Let's talk",
+    "nameHint": "Your name",
+    "emailHint": "Your email",
+    "messageHint": "Message",
     "submit": "Send"
   },
   "project": {

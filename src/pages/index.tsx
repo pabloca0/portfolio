@@ -5,6 +5,7 @@ import experience from '../data/experience';
 import { useTranslation } from 'react-i18next';
 import '../i18n.ts';
 import LanguageSelector from '../components/LanguageSelector';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 const STAR_COUNT = 120;
@@ -271,6 +272,7 @@ export default function Home() {
           </div>
         </footer>
       </div>
+      <SpeedInsights />
     </>
   );
 }

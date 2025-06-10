@@ -12,6 +12,7 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -63,15 +64,26 @@ export default function Home() {
                 href={personalData.github}
                 target="_blank"
                 rel="noopener"
-                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto">
+                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto"
+              >
+                <Github className="w-4 h-4" />
                 GitHub
               </a>
               <a
                 href={personalData.linkedin}
                 target="_blank"
                 rel="noopener"
-                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto">
+                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto"
+              >
+                <Linkedin className="w-4 h-4" />
                 LinkedIn
+              </a>
+              <a
+                href={`mailto:${personalData.email}`}
+                className="flex flex-col items-center justify-center gap-1 bg-[#2a2d34] text-white px-4 py-2 rounded-full hover:bg-[#3b3f47] transition basis-[30%] min-w-[100px] text-center md:flex-row md:gap-2 md:px-4 md:py-1 md:basis-auto"
+              >
+                <Mail className="w-4 h-4" />
+                Email
               </a>
             </div>
           </section>

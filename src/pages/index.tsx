@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import personalData from '../data/personalData';
 import experience from '../data/experience';
+import { Experience } from '../types'; // <-- Importa la interfaz
 import '../i18n.ts';
 import Starfield from '../components/Starfield';
 import Header from '../components/Header';
@@ -102,7 +103,7 @@ export default function Home() {
               {t('nav.experience')}
             </h2>
             <div className="space-y-6">
-              {experience.items.map((exp: any, index: number) => (
+              {experience.items.map((exp: Experience, index: number) => (
                 <ExperienceCard key={index} exp={exp} />
               ))}
             </div>

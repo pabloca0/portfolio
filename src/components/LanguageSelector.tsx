@@ -8,7 +8,7 @@ const languageToCountry: Record<string, string> = {
 };
 
 function getFlagUrl(lang: string) {
-  const countryCode = languageToCountry[lang] || 'es';
+  const countryCode = languageToCountry[lang] || 'gb';
   return `https://flagcdn.com/w20/${countryCode}.png`;
 }
 

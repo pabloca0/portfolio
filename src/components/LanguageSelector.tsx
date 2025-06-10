@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const languageToCountry: Record<string, string> = {
@@ -12,9 +12,27 @@ function getFlagUrl(lang: string) {
   return `https://flagcdn.com/w20/${countryCode}.png`;
 }
 
+function normalizeLang(lang: string) {
+  if (lang.startsWith('es')) return 'es';
+  if (lang.startsWith('en')) return 'en';
+  return 'en';
+}
+
 export default function LanguageSelector() {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState(normalizeLang(i18n.language));
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    setCurrentLang(normalizeLang(i18n.language));
+  }, [i18n.language]);
+
+  if (!mounted) return null;
 
   const toggleDropdown = () => setOpen(!open);
   const changeLanguage = (lang: string) => {
@@ -23,7 +41,6 @@ export default function LanguageSelector() {
   };
 
   const languages = Object.keys(languageToCountry);
-  const currentLang = i18n.language;
 
   return (
     <div className="relative inline-block text-left">

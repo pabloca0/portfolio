@@ -34,7 +34,11 @@
     "nameHint": "Tu nombre",
     "emailHint": "Tu email",
     "messageHint": "Mensaje",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "errorName": "El nombre no puede estar vacío.",
+    "errorEmail": "Introduce un email válido.",
+    "errorMessage": "El mensaje no puede estar vacío.",
+    "successMessage": "¡Mensaje enviado correctamente!"
   },
   "project": {
     "title1": "Proyecto 1",

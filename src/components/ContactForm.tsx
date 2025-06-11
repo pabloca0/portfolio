@@ -57,7 +57,7 @@ const ContactForm = () => {
         setEmail('');
         setMessage('');
         setTimeout(() => setSuccess(false), 4000);
-      } catch (error) {
+      } catch {
         setSuccess(false);
       }
     } else {

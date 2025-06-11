@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
+import personalData from '../data/personalData';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const { t } = useTranslation();
@@ -21,7 +23,7 @@ const ContactForm = () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: typeof errors = {};
 
@@ -38,11 +40,26 @@ const ContactForm = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      setSuccess(true);
-      setName('');
-      setEmail('');
-      setMessage('');
-      setTimeout(() => setSuccess(false), 4000);
+      try {
+        await emailjs.send(
+          'service_qlq2dla',
+          'template_wxvdnqi', 
+          {
+            from_name: name,
+            from_email: email,
+            message,
+            to_email: personalData.email
+          },
+          '3zFhnkG5CiC2pn03G'
+        );
+        setSuccess(true);
+        setName('');
+        setEmail('');
+        setMessage('');
+        setTimeout(() => setSuccess(false), 4000);
+      } catch (error) {
+        setSuccess(false);
+      }
     } else {
       setSuccess(false);
     }
